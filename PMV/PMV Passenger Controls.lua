@@ -45,7 +45,11 @@ end
 -- try require("Folder.Filename") to include code from another file in this, so you can store code in libraries
 -- the "LifeBoatAPI" is included by default in /_build/libs/ - you can use require("LifeBoatAPI") to get this, and use all the LifeBoatAPI.<functions>!
 
+
+
 i1Toggled = false
+
+i2Toggled = false
 
 function onTick()
 isP1 = input.getBool(1)
@@ -62,6 +66,13 @@ else
 i1Toggled=false
 end
 output.setBool(1, i1Toggled)
+
+if (isP1 and isInRect(0,8,30,8,in1X,in1Y)) or (isP2 and isInRect(0,8,30,8,in2X,in2Y)) then
+i2Toggled=true
+else
+i2Toggled=false
+end
+output.setBool(2, i2Toggled)
 end
 
 function onDraw()
@@ -69,9 +80,9 @@ function onDraw()
 setC(4,68,6)
 screen.drawRectF(0,0,30,7)
 setC(0,24,48)
-screen.drawRectF(0,0,30,7)text="Patch"
+screen.drawRectF(0,0,30,7)text="Data"
 if i1Toggled then
-text="Patch"
+text="Data"
 end
 if i1Toggled then
 setC(96,96,96)
@@ -83,6 +94,24 @@ else
 setC(96,96,96)
 end
 screen.drawTextBox(0, 0, 30, 7, text, 0, 0)
+
+setC(7,24,45)
+screen.drawRectF(0,8,30,8)
+setC(0,24,48)
+screen.drawRectF(0,8,30,8)text="Audio"
+if i2Toggled then
+text="audio"
+end
+if i2Toggled then
+setC(96,96,96)
+screen.drawRectF(0, 8, 30, 8)
+end
+if i2Toggled then
+setC(0,0,0)
+else
+setC(96,96,96)
+end
+screen.drawTextBox(0, 8, 30, 8, text, 0, 0)
 end
 
 function setC(r,g,b,a)
