@@ -98,9 +98,9 @@ screen.drawTextBox(0, 0, 30, 7, text, 0, 0)
 setC(7,24,45)
 screen.drawRectF(0,8,30,8)
 setC(0,24,48)
-screen.drawRectF(0,8,30,8)text="Audio"
+screen.drawRectF(0,8,30,8)text="Video"
 if i2Toggled then
-text="audio"
+text="video"
 end
 if i2Toggled then
 setC(96,96,96)
