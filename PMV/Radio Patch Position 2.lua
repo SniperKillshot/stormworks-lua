@@ -157,7 +157,7 @@ function onDraw()
 setC(0,0,0)
 screen.drawRectF(0,6,33,8)
 setC(96,96,96)
-screen.drawTextBox(0,6,33,8,"POS 1",0,0)
+screen.drawTextBox(0,6,33,8,"POS 2",0,0)
 
 setC(0,0,96)
 screen.drawRectF(46,44,30,8)text="ant 4"
