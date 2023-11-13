@@ -30,11 +30,13 @@ do
         simulator:setInputNumber(4, screenConnection.touchY)
 
         -- NEW! button/slider options from the UI
-        simulator:setInputBool(31, simulator:getIsClicked(1))       -- if button 1 is clicked, provide an ON pulse for input.getBool(31)
-        simulator:setInputNumber(31, simulator:getSlider(1))        -- set input 31 to the value of slider 1
+             -- if button 1 is clicked, provide an ON pulse for input.getBool(31)
+        simulator:setInputNumber(7, simulator:getSlider(1))   
+        simulator:setInputNumber(8, simulator:getSlider(2) * 2)  
+        simulator:setInputNumber(9, simulator:getSlider(3) * 3)  
+        simulator:setInputNumber(10, simulator:getSlider(4) * 4)       -- set input 31 to the value of slider 1
 
-        simulator:setInputBool(32, simulator:getIsToggled(2))       -- make button 2 a toggle, for input.getBool(32)
-        simulator:setInputNumber(32, simulator:getSlider(2) * 50)   -- set input 32 to the value from slider 2 * 50
+         -- set input 32 to the value from slider 2 * 50
     end;
 end
 ---@endsection
@@ -65,6 +67,10 @@ in1X = input.getNumber(3)
 in1Y = input.getNumber(4)
 in2X = input.getNumber(5)
 in2Y = input.getNumber(6)
+p1 = input.getNumber(7)
+p2 = input.getNumber(8)
+p3 = input.getNumber(9)
+p4 = input.getNumber(10)
 
 if (isP1 and isInRect(72,1,24,6,in1X,in1Y)) or (isP2 and isInRect(72,1,24,6,in2X,in2Y)) then
 i10Toggled=true
@@ -188,8 +194,24 @@ screen.drawRectF(38,0,33,7)
 setC(0,0,0)
 screen.drawRectF(38,0,33,7)
 setC(96,96,96)
+if p1 == 1 then
 screen.drawTextBox(38, 0, 33, 7, "ANT 1", 0, 0)
+end
+if p1 == 2 then
+    screen.drawTextBox(38, 0, 33, 7, "ANT 2", 0, 0)
+end
 
+if p1 == 3 then
+    screen.drawTextBox(38, 0, 33, 7, "ANT 3", 0, 0)
+end
+
+if p1 == 4 then
+    screen.drawTextBox(38, 0, 33, 7, "ANT 4", 0, 0)
+end
+
+if p1 == 0 then
+    screen.drawTextBox(38, 0, 33, 7, "none", 0, 0)
+end
 setC(69,28,1)
 screen.drawRectF(0,42,30,8)
 setC(0,0,0)
@@ -216,21 +238,84 @@ screen.drawRectF(38,42,31,7)
 setC(0,0,0)
 screen.drawRectF(38,42,31,7)
 setC(96,96,96)
-screen.drawTextBox(38, 42, 31, 7, "ant 4", 0, 0)
+if p4 == 1 then
+    screen.drawTextBox(38, 42, 31, 7, "ant 1", 0, 0)
+    end
+    if p4 == 2 then
+        screen.drawTextBox(38, 42, 31, 7, "ant 2", 0, 0)
+    end
+    
+    if p4 == 3 then
+        screen.drawTextBox(38, 42, 31, 7, "ant 3", 0, 0)
+    end
+    
+    if p4 == 4 then
+        screen.drawTextBox(38, 42, 31, 7, "ant 4", 0, 0)
+    end
+    
+    if p4 == 0 then
+        screen.drawTextBox(38, 42, 31, 7, "none", 0, 0)
+    end
+
+
 
 setC(69,28,1)
 screen.drawRectF(38,28,31,8)
 setC(0,0,0)
 screen.drawRectF(38,28,31,8)
 setC(96,96,96)
-screen.drawTextBox(38, 28, 31, 8, "ANT 3", 0, 0)
+if p3 == 1 then
+    screen.drawTextBox(38, 28, 31, 8, "ANT 1", 0, 0)
+    end
+    if p3 == 2 then
+        screen.drawTextBox(38, 28, 31, 8, "ANT 2", 0, 0)
+    end
+    
+    if p3 == 3 then
+        screen.drawTextBox(38, 28, 31, 8, "ANT 3", 0, 0)   
+     
+
+    end
+    
+    if p3 == 4 then
+        screen.drawTextBox(38, 28, 31, 8, "ANT 4", 0, 0)    
+    end
+    
+    
+    if p3 == 0 then
+        screen.drawTextBox(38, 28, 31, 8, "none", 0, 0)
+        end
+
+
 
 setC(43,93,90)
 screen.drawRectF(38,12,32,10)
 setC(0,0,0)
 screen.drawRectF(38,12,32,10)
 setC(96,96,96)
-screen.drawTextBox(38, 12, 32, 10, "ANt 2", 0, 0)
+
+if p2 == 1 then
+    screen.drawTextBox(38, 12, 32, 10, "ANt 1", 0, 0)
+    end
+    if p2 == 2 then
+        screen.drawTextBox(38, 12, 32, 10, "ANt 2", 0, 0)
+        end
+    
+    if p2 == 3 then
+        screen.drawTextBox(38, 12, 32, 10, "ANt 3", 0, 0)
+
+
+    end
+    
+    if p2 == 4 then
+        screen.drawTextBox(38, 12, 32, 10, "ANt 4", 0, 0)
+        end
+    
+    
+    if p2 == 0 then
+        screen.drawTextBox(38, 12, 32, 10, "none", 0, 0)
+            end
+
 
 setC(0,0,96)
 screen.drawRectF(0,56,24,8)
