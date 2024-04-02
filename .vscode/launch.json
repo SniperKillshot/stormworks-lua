@@ -6,6 +6,30 @@
             "type": "lua",
             "request": "launch",
             "program": "${file}"
+        },
+        {
+            "name": "Run Lua",
+            "type": "lua",
+            "request": "launch",
+            "program": "${file}"
+        },
+        {
+            "name": "Run Lua",
+            "type": "lua",
+            "request": "launch",
+            "program": "${file}"
+        },
+        {
+            "name": "Run Lua",
+            "type": "lua",
+            "request": "launch",
+            "program": "${file}"
+        },
+        {
+            "name": "Run Lua",
+            "type": "lua",
+            "request": "launch",
+            "program": "${file}"
         }
     ]
 }
